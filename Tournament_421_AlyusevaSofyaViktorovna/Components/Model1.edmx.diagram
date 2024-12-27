@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5c764e81b844f8db2463e24461120a3" Name="Diagram1">
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Category" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Group" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.GroupRole" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.GroupUser" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Match" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Roles" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Stats" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Status" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.TournamentStatus" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Users" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_AlyusevaSofyaModel.Zayavka" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_GroupUser_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Zayavka_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Zayavka_GroupRole" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_GroupUser_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Stats_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Stats_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Zayavka_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_TournamentStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Zayavka_Tournaments" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_AlyusevaSofyaModel.FK_Zayavka_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
