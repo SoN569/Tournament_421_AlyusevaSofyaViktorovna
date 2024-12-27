@@ -23,6 +23,26 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Pages
         public MainPage()
         {
             InitializeComponent();
+            if (App.user.IdRole == 1)
+            {
+                PagesFrame.NavigationService.Navigate(new PlayerInfoPage());
+                PlayerSP.Visibility = Visibility.Visible;
+            }
+            else if (App.user.IdRole == 2)
+            {
+                OrganisatorSP.Visibility = Visibility.Visible;
+                PagesFrame.NavigationService.Navigate(new CreateTournamentPage());
+            }
+        }
+
+        private void InfoButt_Click(object sender, RoutedEventArgs e)
+        {
+            PagesFrame.NavigationService.Navigate(new PlayerInfoPage());
+        }
+
+        private void RegForTourButt_Click(object sender, RoutedEventArgs e)
+        {
+            PagesFrame.NavigationService.Navigate(new PlayerRegTourPage());
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public Tournaments()
         {
             this.Match = new HashSet<Match>();
-            this.Zayavka = new HashSet<Zayavka>();
+            this.Request = new HashSet<Request>();
         }
     
         public int IdTour { get; set; }
@@ -36,8 +36,8 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Match> Match { get; set; }
-        public virtual TournamentStatus TournamentStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zayavka> Zayavka { get; set; }
+        public virtual ICollection<Request> Request { get; set; }
+        public virtual TournamentStatus TournamentStatus { get; set; }
     }
 }

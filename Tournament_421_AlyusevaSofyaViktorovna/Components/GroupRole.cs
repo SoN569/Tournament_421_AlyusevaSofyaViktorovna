@@ -17,13 +17,13 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GroupRole()
         {
-            this.Zayavka = new HashSet<Zayavka>();
+            this.Request = new HashSet<Request>();
         }
     
         public int IdGroupRole { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zayavka> Zayavka { get; set; }
+        public virtual ICollection<Request> Request { get; set; }
     }
 }

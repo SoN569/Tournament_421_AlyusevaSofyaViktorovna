@@ -9,6 +9,25 @@
       Title="MainPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Visibility="Collapsed" x:Name="PlayerSP" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Margin="20" x:Name="InfoButt" Click="InfoButt_Click">Личная информация</Button>
+            <Button Margin="20" x:Name="RegForTourButt" Click="RegForTourButt_Click">Регистрация на турнир</Button>
+            <Button Margin="20" x:Name="MatchScheduleButt">Расписание матчей</Button>
+            <Button Margin="20" x:Name="TournamentTableButt">Просмотр турнирной таблицы</Button>
+        </StackPanel>
+
+        <StackPanel Visibility="Collapsed" x:Name="OrganisatorSP" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Margin="20" x:Name="CreateTournamentButt">Создание турниров</Button>
+            <Button Margin="20" x:Name="PlayersListButt">Управление участниками</Button>
+            <Button Margin="20" x:Name="MatchResultButt">Внесение результатов матчей</Button>
+            <Button Margin="20" x:Name="ModerationButt">Модерация</Button>
+        </StackPanel>
+
+        <Frame x:Name="PagesFrame" Grid.Row="1"></Frame>
     </Grid>
 </Page>

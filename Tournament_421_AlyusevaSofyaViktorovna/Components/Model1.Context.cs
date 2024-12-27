@@ -30,13 +30,13 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public virtual DbSet<GroupRole> GroupRole { get; set; }
         public virtual DbSet<GroupUser> GroupUser { get; set; }
         public virtual DbSet<Match> Match { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Stats> Stats { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tournaments> Tournaments { get; set; }
         public virtual DbSet<TournamentStatus> TournamentStatus { get; set; }
-        public virtual DbSet<Zayavka> Zayavka { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

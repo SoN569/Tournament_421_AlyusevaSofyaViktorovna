@@ -20,8 +20,8 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
             this.GroupUser = new HashSet<GroupUser>();
             this.Match = new HashSet<Match>();
             this.Match1 = new HashSet<Match>();
+            this.Request = new HashSet<Request>();
             this.Stats = new HashSet<Stats>();
-            this.Zayavka = new HashSet<Zayavka>();
         }
     
         public int IdUser { get; set; }
@@ -38,10 +38,10 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public virtual ICollection<Match> Match { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Match> Match1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Request> Request { get; set; }
         public virtual Roles Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stats> Stats { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zayavka> Zayavka { get; set; }
     }
 }

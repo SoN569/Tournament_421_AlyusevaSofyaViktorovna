@@ -12,7 +12,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
     using System;
     using System.Collections.Generic;
     
-    public partial class Zayavka
+    public partial class Request
     {
         public int Id { get; set; }
         public Nullable<int> IdStatus { get; set; }

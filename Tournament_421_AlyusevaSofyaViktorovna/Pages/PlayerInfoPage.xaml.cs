@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Tournament_421_AlyusevaSofyaViktorovna.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для RegistrationPage.xaml
+    /// Логика взаимодействия для PlayerInfoPage.xaml
     /// </summary>
-    public partial class RegistrationPage : Page
+    public partial class PlayerInfoPage : Page
     {
-        public RegistrationPage()
+        public PlayerInfoPage()
         {
             InitializeComponent();
         }

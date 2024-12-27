@@ -18,7 +18,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public Group()
         {
             this.GroupUser = new HashSet<GroupUser>();
-            this.Zayavka = new HashSet<Zayavka>();
+            this.Request = new HashSet<Request>();
         }
     
         public int IdGroup { get; set; }
@@ -27,6 +27,6 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GroupUser> GroupUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zayavka> Zayavka { get; set; }
+        public virtual ICollection<Request> Request { get; set; }
     }
 }
