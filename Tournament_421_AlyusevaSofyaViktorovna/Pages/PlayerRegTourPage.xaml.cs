@@ -70,7 +70,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Pages
             else
             {
                 List<string> item = new List<string>();
-                item.Add(NamePlayerCbx.Text); 
+                item.Add(NamePlayerCbx.Text);  
                 item.Add(RolePlayerCbx.Text);
                 PlayersLV.Items.Add(item.ToArray()); 
             }
