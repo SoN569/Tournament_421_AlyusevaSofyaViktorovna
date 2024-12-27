@@ -24,7 +24,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public int IdTour { get; set; }
         public string Name { get; set; }
         public System.DateTime DateTimeStart { get; set; }
-        public int IdGame { get; set; }
+        public string GameName { get; set; }
         public int PlayersAmount { get; set; }
         public decimal Prize { get; set; }
         public Nullable<int> MinPlayerLvl { get; set; }

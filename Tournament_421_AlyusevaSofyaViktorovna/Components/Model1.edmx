@@ -98,7 +98,7 @@
           <Property Name="IdTour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DateTimeStart" Type="datetime" Nullable="false" />
-          <Property Name="IdGame" Type="int" Nullable="false" />
+          <Property Name="GameName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PlayersAmount" Type="int" Nullable="false" />
           <Property Name="Prize" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="MinPlayerLvl" Type="int" />
@@ -396,13 +396,8 @@
           <EntitySet Name="Stats" EntityType="TournamentDB_421_AlyusevaSofyaModel.Stats" />
           <EntitySet Name="Status" EntityType="TournamentDB_421_AlyusevaSofyaModel.Status" />
           <EntitySet Name="sysdiagrams" EntityType="TournamentDB_421_AlyusevaSofyaModel.sysdiagrams" />
-          <EntitySet Name="Tournaments" EntityType="TournamentDB_421_AlyusevaSofyaModel.Tournaments" />
           <EntitySet Name="TournamentStatus" EntityType="TournamentDB_421_AlyusevaSofyaModel.TournamentStatus" />
           <EntitySet Name="Users" EntityType="TournamentDB_421_AlyusevaSofyaModel.Users" />
-          <AssociationSet Name="FK_Tournaments_Category" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_Category">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="Tournaments" EntitySet="Tournaments" />
-          </AssociationSet>
           <AssociationSet Name="FK_GroupUser_Group" Association="TournamentDB_421_AlyusevaSofyaModel.FK_GroupUser_Group">
             <End Role="Group" EntitySet="Group" />
             <End Role="GroupUser" EntitySet="GroupUser" />
@@ -418,10 +413,6 @@
           <AssociationSet Name="FK_GroupUser_Users" Association="TournamentDB_421_AlyusevaSofyaModel.FK_GroupUser_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="GroupUser" EntitySet="GroupUser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Match_Tournaments" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="Match" EntitySet="Match" />
           </AssociationSet>
           <AssociationSet Name="FK_Match_Users" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Users">
             <End Role="Users" EntitySet="Users" />
@@ -439,10 +430,6 @@
             <End Role="Status" EntitySet="Status" />
             <End Role="Request" EntitySet="Request" />
           </AssociationSet>
-          <AssociationSet Name="FK_Request_Tournaments" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="Request" EntitySet="Request" />
-          </AssociationSet>
           <AssociationSet Name="FK_Request_Users" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Request" EntitySet="Request" />
@@ -454,6 +441,19 @@
           <AssociationSet Name="FK_Stats_Users" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Stats_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Stats" EntitySet="Stats" />
+          </AssociationSet>
+          <EntitySet Name="Tournaments" EntityType="TournamentDB_421_AlyusevaSofyaModel.Tournaments" />
+          <AssociationSet Name="FK_Tournaments_Category" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Tournaments" EntitySet="Tournaments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_Tournaments" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Tournaments" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Request" EntitySet="Request" />
           </AssociationSet>
           <AssociationSet Name="FK_Tournaments_TournamentStatus" Association="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_TournamentStatus">
             <End Role="TournamentStatus" EntitySet="TournamentStatus" />
@@ -507,10 +507,10 @@
           <Property Name="IsSecPlayer" Type="Int32" />
           <Property Name="FirstPlayerScore" Type="Int32" />
           <Property Name="SecPlayerScore" Type="Int32" />
-          <NavigationProperty Name="Tournaments" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments" FromRole="Match" ToRole="Tournaments" />
           <NavigationProperty Name="Users" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Users" FromRole="Match" ToRole="Users" />
           <NavigationProperty Name="Users1" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Users1" FromRole="Match" ToRole="Users" />
           <NavigationProperty Name="Stats" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Stats_Match" FromRole="Match" ToRole="Stats" />
+          <NavigationProperty Name="Tournaments" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments" FromRole="Match" ToRole="Tournaments" />
         </EntityType>
         <EntityType Name="Request">
           <Key>
@@ -525,8 +525,8 @@
           <NavigationProperty Name="Group" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Group" FromRole="Request" ToRole="Group" />
           <NavigationProperty Name="GroupRole" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_GroupRole" FromRole="Request" ToRole="GroupRole" />
           <NavigationProperty Name="Status" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Status" FromRole="Request" ToRole="Status" />
-          <NavigationProperty Name="Tournaments" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments" FromRole="Request" ToRole="Tournaments" />
           <NavigationProperty Name="Users" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Users" FromRole="Request" ToRole="Users" />
+          <NavigationProperty Name="Tournaments" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments" FromRole="Request" ToRole="Tournaments" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -565,26 +565,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Tournaments">
-          <Key>
-            <PropertyRef Name="IdTour" />
-          </Key>
-          <Property Name="IdTour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DateTimeStart" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="IdGame" Type="Int32" Nullable="false" />
-          <Property Name="PlayersAmount" Type="Int32" Nullable="false" />
-          <Property Name="Prize" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
-          <Property Name="MinPlayerLvl" Type="Int32" />
-          <Property Name="Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ExcludeCharWeapon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IdCategory" Type="Int32" />
-          <Property Name="IdStatus" Type="Int32" />
-          <NavigationProperty Name="Category" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_Category" FromRole="Tournaments" ToRole="Category" />
-          <NavigationProperty Name="Match" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments" FromRole="Tournaments" ToRole="Match" />
-          <NavigationProperty Name="Request" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments" FromRole="Tournaments" ToRole="Request" />
-          <NavigationProperty Name="TournamentStatus" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_TournamentStatus" FromRole="Tournaments" ToRole="TournamentStatus" />
-        </EntityType>
         <EntityType Name="TournamentStatus">
           <Key>
             <PropertyRef Name="IdStatus" />
@@ -611,18 +591,6 @@
           <NavigationProperty Name="Roles" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
           <NavigationProperty Name="Stats" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Stats_Users" FromRole="Users" ToRole="Stats" />
         </EntityType>
-        <Association Name="FK_Tournaments_Category">
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Category" Role="Category" Multiplicity="0..1" />
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="IdCategory" />
-            </Principal>
-            <Dependent Role="Tournaments">
-              <PropertyRef Name="IdCategory" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_GroupUser_Group">
           <End Type="TournamentDB_421_AlyusevaSofyaModel.Group" Role="Group" Multiplicity="0..1" />
           <End Type="TournamentDB_421_AlyusevaSofyaModel.GroupUser" Role="GroupUser" Multiplicity="*" />
@@ -668,18 +636,6 @@
             </Principal>
             <Dependent Role="GroupUser">
               <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Match_Tournaments">
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="0..1" />
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Match" Role="Match" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="IdTour" />
-            </Principal>
-            <Dependent Role="Match">
-              <PropertyRef Name="IdTournament" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -731,18 +687,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Request_Tournaments">
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="0..1" />
-          <End Type="TournamentDB_421_AlyusevaSofyaModel.Request" Role="Request" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="IdTour" />
-            </Principal>
-            <Dependent Role="Request">
-              <PropertyRef Name="IdTournament" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Request_Users">
           <End Type="TournamentDB_421_AlyusevaSofyaModel.Users" Role="Users" Multiplicity="0..1" />
           <End Type="TournamentDB_421_AlyusevaSofyaModel.Request" Role="Request" Multiplicity="*" />
@@ -776,6 +720,62 @@
             </Principal>
             <Dependent Role="Stats">
               <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tournaments">
+          <Key>
+            <PropertyRef Name="IdTour" />
+          </Key>
+          <Property Name="IdTour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTimeStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GameName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlayersAmount" Type="Int32" Nullable="false" />
+          <Property Name="Prize" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="MinPlayerLvl" Type="Int32" />
+          <Property Name="Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExcludeCharWeapon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdCategory" Type="Int32" />
+          <Property Name="IdStatus" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_Category" FromRole="Tournaments" ToRole="Category" />
+          <NavigationProperty Name="Match" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Match_Tournaments" FromRole="Tournaments" ToRole="Match" />
+          <NavigationProperty Name="Request" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Request_Tournaments" FromRole="Tournaments" ToRole="Request" />
+          <NavigationProperty Name="TournamentStatus" Relationship="TournamentDB_421_AlyusevaSofyaModel.FK_Tournaments_TournamentStatus" FromRole="Tournaments" ToRole="TournamentStatus" />
+        </EntityType>
+        <Association Name="FK_Tournaments_Category">
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="IdCategory" />
+            </Principal>
+            <Dependent Role="Tournaments">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_Tournaments">
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="0..1" />
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Match" Role="Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="IdTournament" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Tournaments">
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Tournaments" Role="Tournaments" Multiplicity="0..1" />
+          <End Type="TournamentDB_421_AlyusevaSofyaModel.Request" Role="Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="IdTour" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="IdTournament" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -893,23 +893,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tournaments">
-            <EntityTypeMapping TypeName="TournamentDB_421_AlyusevaSofyaModel.Tournaments">
-              <MappingFragment StoreEntitySet="Tournaments">
-                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
-                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
-                <ScalarProperty Name="ExcludeCharWeapon" ColumnName="ExcludeCharWeapon" />
-                <ScalarProperty Name="Region" ColumnName="Region" />
-                <ScalarProperty Name="MinPlayerLvl" ColumnName="MinPlayerLvl" />
-                <ScalarProperty Name="Prize" ColumnName="Prize" />
-                <ScalarProperty Name="PlayersAmount" ColumnName="PlayersAmount" />
-                <ScalarProperty Name="IdGame" ColumnName="IdGame" />
-                <ScalarProperty Name="DateTimeStart" ColumnName="DateTimeStart" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="IdTour" ColumnName="IdTour" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TournamentStatus">
             <EntityTypeMapping TypeName="TournamentDB_421_AlyusevaSofyaModel.TournamentStatus">
               <MappingFragment StoreEntitySet="TournamentStatus">
@@ -928,6 +911,23 @@
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tournaments">
+            <EntityTypeMapping TypeName="TournamentDB_421_AlyusevaSofyaModel.Tournaments">
+              <MappingFragment StoreEntitySet="Tournaments">
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+                <ScalarProperty Name="ExcludeCharWeapon" ColumnName="ExcludeCharWeapon" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="MinPlayerLvl" ColumnName="MinPlayerLvl" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+                <ScalarProperty Name="PlayersAmount" ColumnName="PlayersAmount" />
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="DateTimeStart" ColumnName="DateTimeStart" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdTour" ColumnName="IdTour" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

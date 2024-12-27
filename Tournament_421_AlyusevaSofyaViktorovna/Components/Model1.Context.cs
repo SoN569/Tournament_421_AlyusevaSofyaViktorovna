@@ -35,8 +35,8 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public virtual DbSet<Stats> Stats { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Tournaments> Tournaments { get; set; }
         public virtual DbSet<TournamentStatus> TournamentStatus { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Tournaments> Tournaments { get; set; }
     }
 }

@@ -13,37 +13,36 @@
             <TextBlock HorizontalAlignment="Center">Регистрация</TextBlock>
             <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
                 <TextBlock>Турнир</TextBlock>
-                <ComboBox x:Name="TounamentCbx"></ComboBox>
+                <ComboBox x:Name="TournamentCbx" SelectionChanged="TournamentCbx_SelectionChanged"></ComboBox>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+            <StackPanel x:Name="RoleSP" HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
                 <TextBlock>Желаемая роль</TextBlock>
-                <ComboBox x:Name="TounamentRoleCbx"></ComboBox>
+                <ComboBox x:Name="TournamentRoleCbx"></ComboBox>
             </StackPanel>
 
-            <StackPanel x:Name="Tournament2SP" HorizontalAlignment="Right" Margin="10" Orientation="Vertical">
+            <StackPanel x:Name="GroupSP" HorizontalAlignment="Right" Margin="10" Orientation="Vertical">
                 <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
                     <TextBlock>Имя игрока</TextBlock>
                     <ComboBox Width="150" x:Name="NamePlayerCbx"></ComboBox>
-                    <Button Width="150">Добавить</Button>
+                    <Button Width="150" x:Name="AddPlayerButt" Click="AddPlayerButt_Click">Добавить</Button>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
                     <TextBlock>Желаемая роль</TextBlock>
                     <ComboBox x:Name="RolePlayerCbx"></ComboBox>
                 </StackPanel>
-                <ListView Width="350" Height="120">
+                <ListView x:Name="PlayersLV" Width="350" Height="120">
                     <ListView.View>
                         <GridView>
                             <GridView.Columns>
-                                <GridViewColumn Width="50" Header="№"></GridViewColumn>
                                 <GridViewColumn Width="150"  Header="Имя"></GridViewColumn>
                                 <GridViewColumn Width="150" Header="Роль"></GridViewColumn>
                             </GridView.Columns>
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Button Margin="10">Удалить</Button>
-                <Button Margin="10" x:Name="RegButt">Зарегистрироваться</Button>
+                <Button Margin="10" Name="DeletePlayerButt">Удалить</Button>
             </StackPanel>
+            <Button Margin="10" x:Name="RegButt" Click="RegButt_Click">Зарегистрироваться</Button>
         </StackPanel>
     </Grid>
 </Page>

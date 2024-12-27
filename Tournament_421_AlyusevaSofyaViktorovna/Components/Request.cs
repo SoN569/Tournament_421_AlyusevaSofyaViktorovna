@@ -24,7 +24,7 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public virtual Group Group { get; set; }
         public virtual GroupRole GroupRole { get; set; }
         public virtual Status Status { get; set; }
-        public virtual Tournaments Tournaments { get; set; }
         public virtual Users Users { get; set; }
+        public virtual Tournaments Tournaments { get; set; }
     }
 }

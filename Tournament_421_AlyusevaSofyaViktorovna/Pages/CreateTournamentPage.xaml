@@ -17,25 +17,44 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
                 <TextBlock>Дата</TextBlock>
-                <DatePicker x:Name="DateDP"></DatePicker>
+                <DatePicker x:Name="DateDP" Width="150"></DatePicker>
                 <TextBlock>Время</TextBlock>
-                <TextBox x:Name="TimeTbx"></TextBox>
+                <TextBox x:Name="TimeTbx" Width="100"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
-                <TextBlock>Роль</TextBlock>
-                <ComboBox x:Name="RoleCbx"></ComboBox>
+                <TextBlock>Название игры</TextBlock>
+                <TextBox x:Name="GameNameTbx"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
-                <TextBlock>Логин</TextBlock>
-                <TextBox x:Name="LoginTbx"></TextBox>
+                <TextBlock>Категория</TextBlock>
+                <ComboBox x:Name="CategoryCbx"></ComboBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
-                <TextBlock>Пароль</TextBlock>
-                <PasswordBox x:Name="PasswordTbx"></PasswordBox>
+                <TextBlock>Кол-во участников</TextBlock>
+                <TextBox x:Name="PlayerAmountTbx"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+                <TextBlock>Призовой фонд</TextBlock>
+                <TextBox x:Name="PrizeTbx"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+                <TextBlock>Минимальный игровой ранг</TextBlock>
+                <CheckBox Unchecked="MinLvlCheck_Checked" VerticalAlignment="Center" x:Name="MinLvlCheck" Checked="MinLvlCheck_Checked"></CheckBox>
+                <TextBox x:Name="MinLvlTbx"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+                <TextBlock>Регион</TextBlock>
+                <CheckBox Unchecked="RegionCheck_Checked" VerticalAlignment="Center" x:Name="RegionCheck" Checked="RegionCheck_Checked"></CheckBox>
+                <TextBox x:Name="RegionTbx"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+                <TextBlock>Зпрет на персонажей/оружие</TextBlock>
+                <CheckBox Unchecked="ExcludeCheck_Checked" VerticalAlignment="Center" x:Name="ExcludeCheck" Checked="ExcludeCheck_Checked"></CheckBox>
+                <TextBox x:Name="ExcludeTbx"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="10">
-                <Button Margin="10" x:Name="RegButt" Click="RegButt_Click">Зарегистрироваться</Button>
-                <Button Margin="10" x:Name="AuthButt" Click="AuthButt_Click">Уже есть аккаунт</Button>
+                <Button Margin="10" x:Name="RegButt" Click="RegButt_Click">Добавить турнир</Button>
+                <Button Margin="10" x:Name="TounamentsListButt">Список турниров</Button>
             </StackPanel>
         </StackPanel>
     </Grid>
