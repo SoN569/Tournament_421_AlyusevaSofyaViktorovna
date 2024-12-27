@@ -12,19 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tournament_421_AlyusevaSofyaViktorovna.Pages;
 
-namespace Tournament_421_AlyusevaSofyaViktorovna
+namespace Tournament_421_AlyusevaSofyaViktorovna.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RegPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegPage : Page
     {
-        public MainWindow()
+        public RegPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new AuthPage());
+        }
+
+        private void AuthButt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AuthPage());
+
         }
     }
 }

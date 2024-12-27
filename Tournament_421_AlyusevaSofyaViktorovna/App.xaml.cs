@@ -15,5 +15,6 @@ namespace Tournament_421_AlyusevaSofyaViktorovna
     public partial class App : Application
     {
         public static TournamentDB_421_AlyusevaSofyaEntities db = new TournamentDB_421_AlyusevaSofyaEntities();
+        public static Users user;
     }
 }

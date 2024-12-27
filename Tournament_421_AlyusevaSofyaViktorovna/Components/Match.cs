@@ -30,9 +30,9 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Components
         public Nullable<int> SecPlayerScore { get; set; }
     
         public virtual Tournaments Tournaments { get; set; }
-        public virtual Users Users { get; set; }
-        public virtual Users Users1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Stats> Stats { get; set; }
+        public virtual Users Users { get; set; }
+        public virtual Users Users1 { get; set; }
     }
 }

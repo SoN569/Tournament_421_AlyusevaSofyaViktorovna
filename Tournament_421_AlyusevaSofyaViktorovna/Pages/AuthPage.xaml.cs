@@ -24,5 +24,25 @@ namespace Tournament_421_AlyusevaSofyaViktorovna.Pages
         {
             InitializeComponent();
         }
+
+        private void RegButt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegPage());
+        }
+
+        private void AuthButt_Click(object sender, RoutedEventArgs e)
+        {
+            if (LoginTbx.Text.Length == 0 || PasswordTbx.Password.Length == 0) MessageBox.Show("Логин или пароль пустые");
+            else
+            {
+                if (App.db.Users.Where(x => LoginTbx.Text == x.Login && x.Password == PasswordTbx.Password).Count() > 0)
+                {
+                    App.user = App.db.Users.First(x => LoginTbx.Text == x.Login && x.Password == PasswordTbx.Password);
+                    MessageBox.Show("Вы успешно вошли");
+                    NavigationService.Navigate(new MainPage());
+                }
+                else MessageBox.Show("Ошибка входа");
+            }
+        }
     }
 }
